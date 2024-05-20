@@ -11,9 +11,14 @@ html, body {
 
 body {
     background-color: #1B1B1B;
-    font-family: "Avenir Next", sans-serif;
-    color: white;
+    font-family: "Poetsen One", sans-serif;
 }
+
+#intro {
+    color: #1f1f1f;
+    font-size: 6.5vw;
+}
+
 
 #enclosing_div {
     display: flex;
@@ -26,12 +31,12 @@ body {
 }
 
 .component_box {
-    padding: 20px;
-    text-align: center;
+    text-align: left;
     box-sizing: border-box; /* Ensures padding and border are included in width calculation */
-    /*background: gray;*/
 
     transition: transform 0.5s ease;
+
+    height: calc(50% - var(--grid-gap)/2); /* 50% height minus gap */
 }
 
 .component_box:hover {
@@ -42,6 +47,10 @@ body {
 #top_left_box {
     flex: 1 1 calc(45% - var(--grid-gap));
     background: #ffb3ba;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #top_middle_box {
