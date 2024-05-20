@@ -1,9 +1,69 @@
+:root {
+    --grid-gap: 30px;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
 body {
-    background-color: #1A1B1B;
+    background-color: #1B1B1B;
     font-family: "Avenir Next", sans-serif;
     color: white;
 }
 
-.centred {
+#enclosing_div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--grid-gap);
+
+    margin: 8.75%;
+    height: 65%;
+    /*background: gray; !* temp *!*/
+}
+
+.component_box {
+    padding: 20px;
     text-align: center;
+    box-sizing: border-box; /* Ensures padding and border are included in width calculation */
+
+    /*background: gray;*/
+}
+
+.component_box:hover {
+    transform: scale(105%);
+}
+
+
+#top_left_box {
+    flex: 1 1 calc(45% - var(--grid-gap));
+    background: #ffb3ba;
+}
+
+#top_middle_box {
+    flex: 1 1 calc(30% - var(--grid-gap));
+    background: #ffdfba;
+}
+
+#top_right_box {
+    flex: 1 1 calc(25% - var(--grid-gap));
+    background: #ffffba;
+}
+
+#bottom_left_box {
+    flex: 1 1 calc(25% - var(--grid-gap));
+    background: #baffc9;
+}
+
+#bottom_middle_box {
+    flex: 1 1 calc(30% - var(--grid-gap));
+    background: #bae1ff;
+}
+
+#bottom_right_box {
+    flex: 1 1 calc(45% - var(--grid-gap));
+    background: #e3baff;
 }
