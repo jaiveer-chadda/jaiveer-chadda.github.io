@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
+    <meta charset="UTF-8">
     <title>JV Chadda</title>
 
     <!-- Poestsen One Font (Google) -->
@@ -14,16 +14,17 @@
 
   <body>
     <div id="enclosing_div">
-      <div class="component_box" id="top_left_box">
-        <p id="intro">Hi, I'm JV</p>
+      <div class="component_box clickable" id="top_left_box" onclick="location.href='/sub-pages/about-me.html';">
+        <p id="intro">Hi, I'm JV!</p>
       </div>
-      <div class="component_box clickable" id="top_middle_box" onclick="location.href='#';"></div>
+      <div class="component_box" id="top_middle_box"></div>
       <div class="component_box" id="top_right_box"></div>
 
       <div class="component_box" id="bottom_left_box"></div>
       <div class="component_box" id="bottom_middle_box"></div>
       <div class="component_box" id="bottom_right_box"></div>
     </div>
-  </body>
 
+    <script src="script.js"></script>
+  </body>
 </html>

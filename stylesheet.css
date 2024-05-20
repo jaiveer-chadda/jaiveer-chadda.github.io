@@ -1,5 +1,6 @@
 :root {
     --grid-gap: 30px;
+    --background-colour: #1B1B1B;
 }
 
 html, body {
@@ -10,19 +11,24 @@ html, body {
 }
 
 body {
-    background-color: #1B1B1B;
+    background-color: var(--background-colour);
     font-family: "Poetsen One", sans-serif;
 }
 
+/* Individual component functionality */
+
 #intro {
-    color: #1f1f1f;
+    color: var(--background-colour);
     font-size: 6.5vw;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform-origin: center;
 }
 
 .clickable {
     cursor: pointer;
 }
 
+/* Grid functionality and formatting */
 
 #enclosing_div {
     display: flex;
@@ -40,6 +46,7 @@ body {
 
     transition: transform 0.5s ease;
 
+    border-radius: 15px;
     height: calc(50% - var(--grid-gap)/2); /* 50% height minus gap */
 }
 
@@ -47,10 +54,9 @@ body {
     transform: scale(105%);
 }
 
-
 #top_left_box {
     flex: 1 1 calc(45% - var(--grid-gap));
-    background: #ffb3ba;
+    background: #FFB3BA;
 
     display: flex;
     justify-content: center;
@@ -59,25 +65,25 @@ body {
 
 #top_middle_box {
     flex: 1 1 calc(30% - var(--grid-gap));
-    background: #ffdfba;
+    background: #FFDFBA;
 }
 
 #top_right_box {
     flex: 1 1 calc(25% - var(--grid-gap));
-    background: #ffffba;
+    background: #FFFFBA;
 }
 
 #bottom_left_box {
     flex: 1 1 calc(25% - var(--grid-gap));
-    background: #baffc9;
+    background: #BAFFC9;
 }
 
 #bottom_middle_box {
     flex: 1 1 calc(30% - var(--grid-gap));
-    background: #bae1ff;
+    background: #BAE1FF;
 }
 
 #bottom_right_box {
     flex: 1 1 calc(45% - var(--grid-gap));
-    background: #e3baff;
+    background: #E3BAFF;
 }
