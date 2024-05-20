@@ -29,8 +29,9 @@ body {
     padding: 20px;
     text-align: center;
     box-sizing: border-box; /* Ensures padding and border are included in width calculation */
-
     /*background: gray;*/
+
+    transition: transform 0.5s ease;
 }
 
 .component_box:hover {
