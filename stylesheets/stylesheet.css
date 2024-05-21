@@ -21,18 +21,20 @@ body {
 #intro {
     color: var(--background-colour);
     font-size: 6.5vw;
+    position: fixed;
 
     transition: transform 0.5s ease, opacity 0.5s ease;
     transform-origin: center;
 }
 
-/*#secondary_text {*/
-/*    color: var(--background-colour);*/
-/*    font-size: 2vw;*/
-/*    opacity : 0;*/
+#secondary_text {
+    color: var(--background-colour);
+    font-size: 2vw;
+    opacity: 0;
 
-/*    transition: opacity 0.5s ease;*/
-/*}*/
+    transition: opacity 0.5s ease;
+    margin-top: 1rem; /* Adjust as needed for spacing */
+}
 
 .clickable {
     cursor: pointer;
@@ -69,13 +71,14 @@ body {
 
 #top_left_box {
     background: #FFB3BA;
-
     width: 45%;
     left: 0;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center; /* Center the text */
 }
 
 #top_middle_box {

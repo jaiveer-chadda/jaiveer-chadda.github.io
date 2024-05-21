@@ -33,16 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
     topLeftBox.addEventListener('click', () => {
         if (pageState === "home") {
             pageState = "about";
 
             introText.style.opacity = '0';
+            secondaryText.style.opacity = '0';
 
             topMiddleBox.style.opacity = '0';
             topRightBox.style.opacity = '0';
-            setTimeout(() => {
 
+            setTimeout(() => {
+                introText.style.opacity = '0';
                 topMiddleBox.style.width = '0';
                 topRightBox.style.width = '0';
 
@@ -51,11 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 setTimeout(() => {
                     introText.innerHTML = "Jaiveer&nbsp;Chadda";
-                    introText.style.translate = '0 -45%'
+                    introText.style.translate = '0 -35%';
                     topLeftBox.style.justifyContent = 'center';
                     introText.style.fontSize = '5vw';
                     introText.style.opacity = '1';
-                }, 700)
+
+                    secondaryText.textContent = "Computer Science & Philosophy Student";
+                    secondaryText.style.translate = '0 140%';
+                    secondaryText.style.opacity = '1'; // Fade in secondary text
+                }, 700);
             }, 350);
         }
     });
