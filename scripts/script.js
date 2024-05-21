@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const topLeftBox = document.getElementById('top_left_box');
+    const topLeftBox        = document.getElementById('top_left_box');
+    // const topMiddleBox      = document.getElementById('top_middle_box');
+    // const topRightBox       = document.getElementById('top_right_box');
+    // const bottomLeftBox     = document.getElementById('bottom_left_box');
+    // const bottomMiddleBox   = document.getElementById('bottom_middle_box');
+    // const bottomRightBox    = document.getElementById('bottom_right_box');
+
     const introText = document.getElementById('intro');
 
     topLeftBox.addEventListener('mouseenter', () => {
