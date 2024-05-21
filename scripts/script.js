@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const topLeftBox        = document.getElementById('top_left_box');
-    // const topMiddleBox      = document.getElementById('top_middle_box');
-    // const topRightBox       = document.getElementById('top_right_box');
-    // const bottomLeftBox     = document.getElementById('bottom_left_box');
-    // const bottomMiddleBox   = document.getElementById('bottom_middle_box');
-    // const bottomRightBox    = document.getElementById('bottom_right_box');
+    const topMiddleBox      = document.getElementById('top_middle_box');
+    const topRightBox       = document.getElementById('top_right_box');
+    const bottomLeftBox     = document.getElementById('bottom_left_box');
+    const bottomMiddleBox   = document.getElementById('bottom_middle_box');
+    const bottomRightBox    = document.getElementById('bottom_right_box');
 
     const introText = document.getElementById('intro');
 
@@ -25,4 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
             introText.style.opacity = '1';
         }, 350);
     });
+
+    // topLeftBox.addEventListener('click', () => {
+    //     introText.style.opacity = '0';
+    //
+    //     topMiddleBox.style.opacity = '0';
+    //     topRightBox.style.opacity = '0';
+    //     setTimeout( () => {
+    //         topMiddleBox.style.width = '0';
+    //         topRightBox.style.width = '0';
+    //
+    //         topLeftBox.style.width = '55%';
+    //         bottomRightBox.style.scale = '200%, 100%';
+    //     }, 350);
+    //
+    // });
 });
