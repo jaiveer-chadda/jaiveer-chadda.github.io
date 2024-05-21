@@ -1,5 +1,5 @@
 :root {
-    --grid-gap: 30px;
+    --grid-gap: 25px;
     --background-colour: #1B1B1B;
 }
 
@@ -31,12 +31,13 @@ body {
 /* Grid functionality and formatting */
 
 #enclosing_div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--grid-gap);
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*gap: var(--grid-gap);*/
 
     margin: 8.75%;
     height: 65%;
+
     /*background: gray; !* temp *!*/
 }
 
@@ -55,7 +56,13 @@ body {
 }
 
 #top_left_box {
-    flex: 1 1 calc(45% - var(--grid-gap));
+    /*flex: 1 1 calc(45% - var(--grid-gap));*/
+
+    width: 45%;
+    height: calc(50% - var(--grid-gap));
+
+    float: left;
+
     background: #FFB3BA;
 
     display: flex;
@@ -64,26 +71,49 @@ body {
 }
 
 #top_middle_box {
-    flex: 1 1 calc(30% - var(--grid-gap));
+    width: calc(30% - var(--grid-gap));
+    height: calc(50% - var(--grid-gap));
+
+    float: left;
+    margin-left: var(--grid-gap);
+
     background: #FFDFBA;
 }
 
 #top_right_box {
-    flex: 1 1 calc(25% - var(--grid-gap));
+    width: calc(25% - var(--grid-gap));
+    height: calc(50% - var(--grid-gap));
+
+    float: left;
+    margin-left: var(--grid-gap);
+
     background: #FFFFBA;
 }
 
+#clear {
+    height: var(--grid-gap);
+    clear: both;
+}
+
 #bottom_left_box {
-    flex: 1 1 calc(25% - var(--grid-gap));
+    width: 25%;
     background: #BAFFC9;
+
+    float: left;
 }
 
 #bottom_middle_box {
-    flex: 1 1 calc(30% - var(--grid-gap));
+    width: calc(30% - var(--grid-gap));
     background: #BAE1FF;
+
+    float: left;
+    margin-left: var(--grid-gap);
 }
 
 #bottom_right_box {
-    flex: 1 1 calc(45% - var(--grid-gap));
+    width: calc(45% - var(--grid-gap));
     background: #E3BAFF;
+
+    float: left;
+    margin-left: var(--grid-gap);
 }
