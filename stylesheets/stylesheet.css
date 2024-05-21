@@ -1,5 +1,5 @@
 :root {
-    --grid-gap: 25px;
+    --grid-gap: 30px;
     --background-colour: #1B1B1B;
 }
 
@@ -31,10 +31,6 @@ body {
 /* Grid functionality and formatting */
 
 #enclosing_div {
-    /*display: flex;*/
-    /*flex-wrap: wrap;*/
-    /*gap: var(--grid-gap);*/
-
     margin: 8.75%;
     height: 65%;
 
@@ -56,10 +52,7 @@ body {
 }
 
 #top_left_box {
-    /*flex: 1 1 calc(45% - var(--grid-gap));*/
-
     width: 45%;
-    height: calc(50% - var(--grid-gap));
 
     float: left;
 
@@ -72,7 +65,6 @@ body {
 
 #top_middle_box {
     width: calc(30% - var(--grid-gap));
-    height: calc(50% - var(--grid-gap));
 
     float: left;
     margin-left: var(--grid-gap);
@@ -82,7 +74,6 @@ body {
 
 #top_right_box {
     width: calc(25% - var(--grid-gap));
-    height: calc(50% - var(--grid-gap));
 
     float: left;
     margin-left: var(--grid-gap);
