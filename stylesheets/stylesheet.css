@@ -1,6 +1,7 @@
 :root {
     --grid-gap: 30px;
     --background-colour: #1B1B1B;
+    --new-page-transition-time: 0.7s;
 }
 
 html, body {
@@ -20,9 +21,18 @@ body {
 #intro {
     color: var(--background-colour);
     font-size: 6.5vw;
+
     transition: transform 0.5s ease, opacity 0.5s ease;
     transform-origin: center;
 }
+
+/*#secondary_text {*/
+/*    color: var(--background-colour);*/
+/*    font-size: 2vw;*/
+/*    opacity : 0;*/
+
+/*    transition: opacity 0.5s ease;*/
+/*}*/
 
 .clickable {
     cursor: pointer;
@@ -40,15 +50,13 @@ body {
 }
 
 .component_box {
-    text-align: left;
-    box-sizing: border-box; /* Ensures padding and border are included in width calculation */
-
-    transition: transform 0.5s ease, opacity 0.35s ease, width 0.5s ease;
-
     position: absolute;
+    height: calc(50% - var(--grid-gap)/2);
 
     border-radius: 15px;
-    height: calc(50% - var(--grid-gap)/2); /* 50% height minus gap */
+
+    transition: transform 0.5s ease, opacity 0.35s ease,
+        width var(--new-page-transition-time) ease, height var(--new-page-transition-time) ease;
 }
 
 .component_box:hover {
@@ -68,14 +76,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 #top_middle_box {
     background: #FFDFBA;
 
     width: calc(30% - var(--grid-gap));
-    left: calc(45% + var(--grid-gap))
+    left: calc(45% + var(--grid-gap));
+    right: 25%;
 }
 
 #top_right_box {
@@ -101,7 +109,8 @@ body {
     background: #BAE1FF;
 
     width: calc(30% - var(--grid-gap));
-    left: calc(25% + var(--grid-gap))
+    left: calc(25% + var(--grid-gap));
+    right: 45%;
 }
 
 #bottom_right_box {

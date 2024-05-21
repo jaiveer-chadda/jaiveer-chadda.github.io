@@ -1,3 +1,5 @@
+var pageState = "home";
+
 document.addEventListener('DOMContentLoaded', () => {
     const topLeftBox        = document.getElementById('top_left_box');
     const topMiddleBox      = document.getElementById('top_middle_box');
@@ -7,37 +9,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const bottomRightBox    = document.getElementById('bottom_right_box');
 
     const introText = document.getElementById('intro');
+    const secondaryText = document.getElementById('secondary_text');
 
     topLeftBox.addEventListener('mouseenter', () => {
-        introText.style.opacity = '0';
-        setTimeout(() => {
-            introText.textContent = 'About me...';
-            introText.style.fontSize = '6vw';
-            introText.style.opacity = '1';
-        }, 350);
+        if (pageState === "home") {
+            introText.style.opacity = '0';
+            setTimeout(() => {
+                introText.textContent = 'About me...';
+                introText.style.fontSize = '6vw';
+                introText.style.opacity = '1';
+            }, 350);
+        }
     });
 
     topLeftBox.addEventListener('mouseleave', () => {
-        introText.style.opacity = '0';
-        setTimeout(() => {
-            introText.textContent = "Hi, I'm JV!";
-            introText.style.fontSize = '6.5vw';
-            introText.style.opacity = '1';
-        }, 350);
+        if (pageState === "home") {
+            introText.style.opacity = '0';
+            setTimeout(() => {
+                introText.textContent = "Hi, I'm JV!";
+                introText.style.fontSize = '6.5vw';
+                introText.style.opacity = '1';
+            }, 350);
+        }
     });
 
-    // topLeftBox.addEventListener('click', () => {
-    //     introText.style.opacity = '0';
-    //
-    //     topMiddleBox.style.opacity = '0';
-    //     topRightBox.style.opacity = '0';
-    //     setTimeout( () => {
-    //         topMiddleBox.style.width = '0';
-    //         topRightBox.style.width = '0';
-    //
-    //         topLeftBox.style.width = '55%';
-    //         bottomRightBox.style.scale = '200%, 100%';
-    //     }, 350);
-    //
-    // });
+    topLeftBox.addEventListener('click', () => {
+        if (pageState === "home") {
+            pageState = "about";
+
+            introText.style.opacity = '0';
+
+            topMiddleBox.style.opacity = '0';
+            topRightBox.style.opacity = '0';
+            setTimeout(() => {
+
+                topMiddleBox.style.width = '0';
+                topRightBox.style.width = '0';
+
+                topLeftBox.style.width = '55%';
+                bottomRightBox.style.height = '100%';
+
+                setTimeout(() => {
+                    introText.innerHTML = "Jaiveer&nbsp;Chadda";
+                    introText.style.translate = '0 -45%'
+                    topLeftBox.style.justifyContent = 'center';
+                    introText.style.fontSize = '5vw';
+                    introText.style.opacity = '1';
+                }, 700)
+            }, 350);
+        }
+    });
 });
