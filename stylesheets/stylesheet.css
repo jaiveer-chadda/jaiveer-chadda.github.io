@@ -40,12 +40,16 @@ body {
     margin-top: 1rem;
 }
 
-#personal_title, #flag_div, #education_title, #schools_logos_div, #work_title, #work_logos_div, #personal_content {
+#bottom_left_title, #flag_div, #bottom_middle_title, #schools_logos_div, #bottom_right_title, #work_logos_div, .box_content {
     transition: opacity var(--fade-transition-time) ease;
 }
 
-#personal_title {
-    /* ""  =>  "Personal" */
+.box_content {
+    opacity: 0;
+}
+
+#bottom_left_title {
+    /* ""  =>  "Personal"  =>  "Personal Profile" */
     font-size: var(--subtitle-size);
     translate: 0 -0.5rem;
 
@@ -68,12 +72,8 @@ body {
     padding-right: 2%;
 }
 
-#personal_content {
-    opacity: 0;
-}
 
-
-#education_title {
+#bottom_middle_title {
     /* ""  =>  "Education" */
     font-size: var(--subtitle-size);
     translate: 0 -0.5rem;
@@ -98,7 +98,7 @@ body {
     padding-right: 2%;
 }
 
-#work_title {
+#bottom_right_title {
     /* ""  =>  "Work Experience" */
     font-size: calc(var(--subtitle-size)*1.5);
 
