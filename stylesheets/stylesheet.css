@@ -22,6 +22,7 @@ body {
 /* Individual component functionality */
 
 #intro {
+    /* "Hi, I'm JV"  =>  "About me..."  =>  "Jaiveer Chadda" */
     font-size: 6.5vw;
     position: fixed;
 
@@ -30,6 +31,7 @@ body {
 }
 
 #secondary_text {
+    /* ""  =>  "Computer Science & Philosophy Student" */
     color: var(--background-colour);
     font-size: var(--subtitle-size);
     opacity: 0;
@@ -38,11 +40,12 @@ body {
     margin-top: 1rem;
 }
 
-#personal_title, #flag_div, #education_title, #schools_logos_div {
+#personal_title, #flag_div, #education_title, #schools_logos_div, #work_title, #work_logos_div {
     transition: opacity 0.5s ease;
 }
 
 #personal_title {
+    /* ""  =>  "Personal" */
     font-size: var(--subtitle-size);
     translate: 0 -0.5rem;
 
@@ -67,6 +70,7 @@ body {
 
 
 #education_title {
+    /* ""  =>  "Education" */
     font-size: var(--subtitle-size);
     translate: 0 -0.5rem;
 
@@ -91,9 +95,24 @@ body {
 }
 
 #work_title {
+    /* ""  =>  "Work Experience" */
     font-size: calc(var(--subtitle-size)*1.5);
+
+    opacity: 0;
 }
 
+#work_logos_div {
+    width: 100%;
+    height: 70%;
+
+    translate: 0 -2.5%;
+
+    opacity: 0;
+}
+
+#work_logos {
+    width: 90%;
+}
 
 
 .clickable {

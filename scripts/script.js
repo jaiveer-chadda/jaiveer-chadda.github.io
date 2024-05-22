@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const educationTitleText= document.getElementById('education_title');
     const schoolLogoDiv= document.getElementById('schools_logos_div');
 
+    const workTitleText= document.getElementById('work_title');
+    const workExpDiv= document.getElementById('work_logos_div');
+
+
     topLeftBox.addEventListener('mouseenter', () => {
         if (pageState === "home") {
             introText.style.opacity = '0';
@@ -78,7 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         personalTitleText,
                         flagDiv,
                         educationTitleText,
-                        schoolLogoDiv
+                        schoolLogoDiv,
+                        workTitleText,
+                        workExpDiv
                     ]
                         .forEach(element => {
                         element.style.opacity = '1';
