@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 topLeftBox.style.width = '55%';
                 bottomRightBox.style.height = '100%';
+                bottomMiddleBox.style.width = 'calc(25% - var(--grid-gap))';
+                bottomMiddleBox.style.left = 'calc(30% + var(--grid-gap))';
+                bottomLeftBox.style.width = '30%';
+
                 bottomLeftBox.style.background = 'white';
 
                 setTimeout(() => {
