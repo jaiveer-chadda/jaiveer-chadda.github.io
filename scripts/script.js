@@ -8,11 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const bottomMiddleBox   = document.getElementById('bottom_middle_box');
     const bottomRightBox    = document.getElementById('bottom_right_box');
 
+    const allImages= document.getElementsByTagName('img');
+
     const introText= document.getElementById('intro');
     const secondaryText= document.getElementById('secondary_text');
 
     const personalTitleText= document.getElementById('personal_title');
     const flagDiv= document.getElementById('flag_div');
+    const personalContentText= document.getElementById('personal_content');
 
     const educationTitleText= document.getElementById('education_title');
     const schoolLogoDiv= document.getElementById('schools_logos_div');
@@ -61,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 introText.style.opacity = '0';
+
                 topMiddleBox.style.width = '0';
                 topRightBox.style.width = '0';
 
@@ -105,16 +109,58 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pageState === "about-me") {
             pageState = "about-me/personal";
 
+            bottomLeftBox.classList.remove('clickable');
+            bottomLeftBox.classList.remove('expandable');
+
+            [
+                personalTitleText,
+                flagDiv,
+                topLeftBox,
+                bottomMiddleBox,
+                bottomRightBox
+            ]
+                .forEach(element => {
+                    element.style.opacity = '0';
+            });
+
+            setTimeout(() => {
                 [
-                    personalTitleText,
-                    flagDiv,
                     topLeftBox,
+                    topMiddleBox,
+                    topRightBox,
                     bottomMiddleBox,
                     bottomRightBox
                 ]
-                .forEach(element => {
-                    element.style.opacity = '0';
+                    .forEach(box => {
+                        box.style.width = '0';
                 });
+
+                bottomLeftBox.style.width = '100%';
+                bottomLeftBox.style.height = '100%';
+                bottomLeftBox.style.background = 'gray';
+
+                bottomLeftBox.style.overflow = 'scroll';
+
+                bottomLeftBox.style.justifyContent = 'space-between';
+                personalContentText.style.paddingLeft = '4%';
+                personalContentText.style.paddingRight = '4%';
+                personalContentText.style.textAlign = 'left';
+
+                flagDiv.style.height = '0';
+
+                Array.from(allImages).forEach(img => {
+                    img.style.height = '0';
+                });
+
+                personalTitleText.textContent = "Personal Profile";
+                console.log("ran");
+
+                setTimeout(() => {
+                    personalTitleText.style.opacity = '1';
+                    personalContentText.style.opacity = '1';
+                }, 500);
+
+            }, 500);
 
         }
     });

@@ -2,6 +2,7 @@
     --grid-gap: 30px;
     --background-colour: #1B1B1B;
     --new-page-transition-time: 0.5s;
+    --fade-transition-time: 0.5s;
     --subtitle-size: 2vw;
 }
 
@@ -26,8 +27,7 @@ body {
     font-size: 6.5vw;
     position: fixed;
 
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    transform-origin: center;
+    transition: opacity var(--fade-transition-time) ease;
 }
 
 #secondary_text {
@@ -36,12 +36,12 @@ body {
     font-size: var(--subtitle-size);
     opacity: 0;
 
-    transition: opacity 0.5s ease;
+    transition: opacity var(--fade-transition-time) ease;
     margin-top: 1rem;
 }
 
-#personal_title, #flag_div, #education_title, #schools_logos_div, #work_title, #work_logos_div {
-    transition: opacity 0.5s ease;
+#personal_title, #flag_div, #education_title, #schools_logos_div, #work_title, #work_logos_div, #personal_content {
+    transition: opacity var(--fade-transition-time) ease;
 }
 
 #personal_title {
@@ -66,6 +66,10 @@ body {
     width: 25%;
     padding-left: 2%;
     padding-right: 2%;
+}
+
+#personal_content {
+    opacity: 0;
 }
 
 
@@ -137,12 +141,12 @@ body {
 
     border-radius: 15px;
 
-    transition: transform 0.5s ease, opacity 0.35s ease, left var(--new-page-transition-time) ease,
+    transition: transform 0.5s ease, opacity var(--fade-transition-time), left var(--new-page-transition-time) ease,
         width var(--new-page-transition-time) ease, height var(--new-page-transition-time) ease,
         background 0.5s ease;
 }
 
-.component_box:hover {
+.expandable:hover {
     transform: scale(105%);
 }
 
