@@ -57,7 +57,7 @@ const workExpDiv= document.getElementById('work_logos_div');
 const allBoxes = [topLeftBox, topMiddleBox, topRightBox, bottomLeftBox, bottomMiddleBox, bottomRightBox];
 
 
-function makeBoxFullscreen(boxToExpand, title, content) {
+function makeBoxFullscreen(boxToExpand, title, content, newBackgroundColour= null, doFromRight= false) {
     const titleIdFromBoxId = boxToExpand.id.slice(0, -3) + "title";
     const contentTitle= document.getElementById(titleIdFromBoxId);
 
@@ -69,8 +69,13 @@ function makeBoxFullscreen(boxToExpand, title, content) {
 
     boxToExpand.style.width = '100%';
     boxToExpand.style.height = '100%';
-    boxToExpand.style.background = 'gray';
-
+    if (doFromRight) {
+        boxToExpand.style.right = '0';
+    } else {
+        boxToExpand.style.left = '0';
+    }
+    console.log(newBackgroundColour)
+    if (newBackgroundColour !== null) { boxToExpand.style.background = newBackgroundColour; }
     boxToExpand.style.overflow = 'scroll';
 
     boxToExpand.style.justifyContent = 'space-between';
@@ -191,7 +196,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 flagDiv.style.height = '0';
-                makeBoxFullscreen(bottomLeftBox, "Personal Profile", loremIpsum);
+                makeBoxFullscreen(bottomLeftBox, "Personal Profile", loremIpsum, 'gray');
+            }, 500);
+        }
+    });
+
+
+    // About me page to Education page
+    bottomMiddleBox.addEventListener('click', () => {
+        if (pageState === "about-me") {
+            pageState = "about-me/education";
+
+            bottomMiddleBox.classList.remove('clickable');
+            bottomMiddleBox.classList.remove('expandable');
+
+            [
+                educationTitleText,
+                schoolLogoDiv,
+                topLeftBox,
+                bottomLeftBox,
+                bottomRightBox
+            ].forEach(element => {
+                element.style.opacity = '0';
+            });
+
+            setTimeout(() => {
+                schoolLogoDiv.style.height = '0';
+                makeBoxFullscreen(bottomMiddleBox, "Educational History", loremIpsum);
+            }, 500);
+        }
+    });
+
+
+    // About me page to Work page
+    bottomRightBox.addEventListener('click', () => {
+        if (pageState === "about-me") {
+            pageState = "about-me/work";
+
+            bottomRightBox.classList.remove('clickable');
+            bottomRightBox.classList.remove('expandable');
+
+            [
+                workTitleText,
+                workExpDiv,
+                topLeftBox,
+                bottomLeftBox,
+                bottomMiddleBox
+            ].forEach(element => {
+                element.style.opacity = '0';
+            });
+
+            setTimeout(() => {
+                workExpDiv.style.height = '0';
+                makeBoxFullscreen(bottomRightBox, "Work Experience", loremIpsum, null, true);
             }, 500);
         }
     });
