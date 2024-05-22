@@ -8,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const bottomMiddleBox   = document.getElementById('bottom_middle_box');
     const bottomRightBox    = document.getElementById('bottom_right_box');
 
-    const introText = document.getElementById('intro');
-    const secondaryText = document.getElementById('secondary_text');
+    const introText= document.getElementById('intro');
+    const secondaryText= document.getElementById('secondary_text');
+
+    const personalTitleText= document.getElementById('personal_title');
+    const flagDiv= document.getElementById('flag_div');
 
     topLeftBox.addEventListener('mouseenter', () => {
         if (pageState === "home") {
@@ -62,11 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     introText.style.translate = '0 -35%';
                     topLeftBox.style.justifyContent = 'center';
                     introText.style.fontSize = '5vw';
-                    introText.style.opacity = '1';
 
                     secondaryText.textContent = "Computer Science & Philosophy Student";
                     secondaryText.style.translate = '0 150%';
+
+                    introText.style.opacity = '1';
                     secondaryText.style.opacity = '1';
+                    personalTitleText.style.opacity = '1';
+                    flagDiv.style.opacity = '1';
 
                 }, 700);
             }, 350);
