@@ -2,6 +2,7 @@
     --grid-gap: 30px;
     --background-colour: #1B1B1B;
     --new-page-transition-time: 0.5s;
+    --subtitle-size: 2vw;
 }
 
 html, body {
@@ -30,7 +31,7 @@ body {
 
 #secondary_text {
     color: var(--background-colour);
-    font-size: 2vw;
+    font-size: var(--subtitle-size);
     opacity: 0;
 
     transition: opacity 0.5s ease;
@@ -42,7 +43,7 @@ body {
 }
 
 #personal_title {
-    font-size: 2vw;
+    font-size: var(--subtitle-size);
     translate: 0 -0.5rem;
 
     opacity: 0;
@@ -66,7 +67,7 @@ body {
 
 
 #education_title {
-    font-size: 2vw;
+    font-size: var(--subtitle-size);
     translate: 0 -0.5rem;
 
     opacity: 0;
@@ -87,6 +88,10 @@ body {
     height: 80%;
     padding-left: 2%;
     padding-right: 2%;
+}
+
+#work_title {
+    font-size: calc(var(--subtitle-size)*1.5);
 }
 
 
@@ -184,4 +189,7 @@ body {
 
     width: calc(45% - var(--grid-gap));
     right: 0;
+
+    justify-content: center;
+    text-align: center;
 }
