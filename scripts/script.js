@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 topLeftBox.style.width = '55%';
                 bottomRightBox.style.height = '100%';
+                bottomLeftBox.style.background = 'white';
 
                 setTimeout(() => {
                     introText.innerHTML = "Jaiveer&nbsp;Chadda";
@@ -60,8 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     introText.style.opacity = '1';
 
                     secondaryText.textContent = "Computer Science & Philosophy Student";
-                    secondaryText.style.translate = '0 140%';
-                    secondaryText.style.opacity = '1'; // Fade in secondary text
+                    secondaryText.style.translate = '0 150%';
+                    secondaryText.style.opacity = '1';
+
                 }, 700);
             }, 350);
         }
