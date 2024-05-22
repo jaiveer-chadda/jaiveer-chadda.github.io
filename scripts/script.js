@@ -44,9 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    // Home page to about me page
     topLeftBox.addEventListener('click', () => {
         if (pageState === "home") {
-            pageState = "about";
+            pageState = "about-me";
+            topLeftBox.classList.remove('clickable');
+            bottomLeftBox.classList.add('clickable');
+            bottomMiddleBox.classList.add('clickable');
+            bottomRightBox.classList.add('clickable');
 
             introText.style.opacity = '0';
             secondaryText.style.opacity = '0';
@@ -93,4 +98,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 350);
         }
     });
+
+
+    // About me page to Personal page
+    bottomLeftBox.addEventListener('click', () => {
+        if (pageState === "about-me") {
+            pageState = "about-me/personal";
+
+                [
+                    personalTitleText,
+                    flagDiv,
+                    topLeftBox,
+                    bottomMiddleBox,
+                    bottomRightBox
+                ]
+                .forEach(element => {
+                    element.style.opacity = '0';
+                });
+
+        }
+    });
+
+
 });
