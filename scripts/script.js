@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const personalTitleText= document.getElementById('personal_title');
     const flagDiv= document.getElementById('flag_div');
 
+    const educationTitleText= document.getElementById('education_title');
+    const schoolLogoDiv= document.getElementById('schools_logos_div');
+
     topLeftBox.addEventListener('mouseenter', () => {
         if (pageState === "home") {
             introText.style.opacity = '0';
@@ -69,12 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     secondaryText.textContent = "Computer Science & Philosophy Student";
                     secondaryText.style.translate = '0 150%';
 
-                    introText.style.opacity = '1';
-                    secondaryText.style.opacity = '1';
-                    personalTitleText.style.opacity = '1';
-                    flagDiv.style.opacity = '1';
-
-                }, 700);
+                    [
+                        introText,
+                        secondaryText,
+                        personalTitleText,
+                        flagDiv,
+                        educationTitleText,
+                        schoolLogoDiv
+                    ]
+                        .forEach(element => {
+                        element.style.opacity = '1';
+                    });
+                }, 500);
             }, 350);
         }
     });

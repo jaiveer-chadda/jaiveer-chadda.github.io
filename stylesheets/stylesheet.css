@@ -1,7 +1,7 @@
 :root {
     --grid-gap: 30px;
     --background-colour: #1B1B1B;
-    --new-page-transition-time: 0.7s;
+    --new-page-transition-time: 0.5s;
 }
 
 html, body {
@@ -13,8 +13,8 @@ html, body {
 
 body {
     background-color: var(--background-colour);
-    font-family: "Poetsen One", sans-serif;
     color: var(--background-colour);
+    font-family: "Poetsen One", sans-serif;
 }
 
 
@@ -37,7 +37,7 @@ body {
     margin-top: 1rem;
 }
 
-#personal_title, #flag_div {
+#personal_title, #flag_div, #education_title, #schools_logos_div {
     transition: opacity 0.5s ease;
 }
 
@@ -49,12 +49,12 @@ body {
 }
 
 #flag_div {
-    opacity: 0;
-
     width: 100%;
     height: 60%;
 
     margin-top: -1rem;
+
+    opacity: 0;
 }
 
 .flag {
@@ -64,17 +64,31 @@ body {
     padding-right: 2%;
 }
 
-#uk_flag {
+
+#education_title {
+    font-size: 2vw;
+    translate: 0 -0.5rem;
+
+    opacity: 0;
 }
 
-#indian_flag {
+#schools_logos_div {
+    width: 100%;
+    height: 60%;
+
+    margin-top: -1rem;
+
+    opacity: 0;
 }
 
-#scottish_flag {
+.school_logo {
+    /*aspect-ratio: 0.90797;*/
+    /*width: 25%;*/
+    height: 80%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-#uae_flag {
-}
 
 
 .clickable {
@@ -160,6 +174,9 @@ body {
     width: calc(30% - var(--grid-gap));
     left: calc(25% + var(--grid-gap));
     right: 45%;
+
+    justify-content: center;
+    text-align: center;
 }
 
 #bottom_right_box {
