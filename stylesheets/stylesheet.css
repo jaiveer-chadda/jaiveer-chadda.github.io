@@ -20,28 +20,44 @@ body {
 }
 
 
+#back_div, #back_button,
+    #intro, #secondary_text,
+    #bottom_left_title, #flag_div,
+    #bottom_middle_title, #schools_logos_div,
+    #bottom_right_title, #work_logos_div,
+    .box_content {
+    transition: opacity var(--fade-transition-time) ease;
+}
+
+
+#back_div {
+    padding-left: 2%;
+    padding-top: 2%;
+
+    opacity: 0;
+}
+
+#back_button {
+    position: absolute;
+    height: 4%;
+}
+
+
 /* Individual component functionality */
 
 #intro {
     /* "Hi, I'm JV"  =>  "About me..."  =>  "Jaiveer Chadda" */
     font-size: 6.5vw;
     position: fixed;
-
-    transition: opacity var(--fade-transition-time) ease;
 }
 
 #secondary_text {
     /* ""  =>  "Computer Science & Philosophy Student" */
     color: var(--background-colour);
     font-size: var(--subtitle-size);
-    opacity: 0;
-
-    transition: opacity var(--fade-transition-time) ease;
     margin-top: 1rem;
-}
 
-#bottom_left_title, #flag_div, #bottom_middle_title, #schools_logos_div, #bottom_right_title, #work_logos_div, .box_content {
-    transition: opacity var(--fade-transition-time) ease;
+    opacity: 0;
 }
 
 .box_content {

@@ -41,6 +41,9 @@ const bottomRightBox    = document.getElementById('bottom_right_box');
 
 const allImages= document.getElementsByTagName('img');
 
+const backDiv= document.getElementById('back_div');
+const backImg= document.getElementById('back_button');
+
 const introText= document.getElementById('intro');
 const secondaryText= document.getElementById('secondary_text');
 
@@ -74,16 +77,15 @@ function makeBoxFullscreen(boxToExpand, title, content, newBackgroundColour= nul
     } else {
         boxToExpand.style.left = '0';
     }
-    console.log(newBackgroundColour)
     if (newBackgroundColour !== null) { boxToExpand.style.background = newBackgroundColour; }
     boxToExpand.style.overflow = 'scroll';
-
     boxToExpand.style.justifyContent = 'space-between';
+
     contentText.style.paddingLeft = '4%';
     contentText.style.paddingRight = '4%';
     contentText.style.textAlign = 'left';
 
-    Array.from(allImages).forEach(img => { img.style.height = '0'; });
+    Array.from(allImages).filter(item => item !== backImg).forEach(img => { img.style.height = '0'; });
 
     contentTitle.textContent = title;
     contentText.innerHTML = content;
@@ -92,6 +94,19 @@ function makeBoxFullscreen(boxToExpand, title, content, newBackgroundColour= nul
         contentTitle.style.opacity = '1';
         contentText.style.opacity = '1';
     }, 500);
+}
+
+function enterNewPage() {
+    console.log('runs');
+    if (pageState === "home") {
+        console.log('invis');
+        backDiv.style.opacity = '0';
+        backDiv.classList.remove('clickable');
+    } else {
+        backDiv.style.opacity = '1';
+        console.log('vis');
+        backDiv.classList.add('clickable');
+    }
 }
 
 
@@ -123,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     topLeftBox.addEventListener('click', () => {
         if (pageState === "home") {
             pageState = "about-me";
+            enterNewPage();
             topLeftBox.classList.remove('clickable');
             bottomLeftBox.classList.add('clickable');
             bottomMiddleBox.classList.add('clickable');
@@ -180,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bottomLeftBox.addEventListener('click', () => {
         if (pageState === "about-me") {
             pageState = "about-me/personal";
+            enterNewPage();
 
             bottomLeftBox.classList.remove('clickable');
             bottomLeftBox.classList.remove('expandable');
@@ -206,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bottomMiddleBox.addEventListener('click', () => {
         if (pageState === "about-me") {
             pageState = "about-me/education";
+            enterNewPage();
 
             bottomMiddleBox.classList.remove('clickable');
             bottomMiddleBox.classList.remove('expandable');
@@ -232,6 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bottomRightBox.addEventListener('click', () => {
         if (pageState === "about-me") {
             pageState = "about-me/work";
+            enterNewPage();
 
             bottomRightBox.classList.remove('clickable');
             bottomRightBox.classList.remove('expandable');
