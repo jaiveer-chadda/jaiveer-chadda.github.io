@@ -1,9 +1,10 @@
 :root {
     --grid-gap: 30px;
     --background-colour: #1B1B1B;
+    --subtitle-size: 2vw;
+
     --new-page-transition-time: 0.5s;
     --fade-transition-time: 0.5s;
-    --subtitle-size: 2vw;
 }
 
 html, body {
