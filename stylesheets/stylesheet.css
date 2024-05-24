@@ -38,7 +38,8 @@ body {
 }
 
 #back_button {
-    position: absolute;
+    position: fixed;
+
     height: 4%;
 }
 
@@ -145,6 +146,8 @@ body {
 #enclosing_div {
     margin: 8.75%;
     height: 65%;
+
+    translate: -2% 0;
 
     position: relative;
 
