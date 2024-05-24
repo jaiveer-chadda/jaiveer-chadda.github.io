@@ -1,4 +1,4 @@
-var pageState = "home";
+var pageState = "index";
 
 const loremIpsum = `
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum metus ipsum, convallis quis porta vulputate, tincidunt nec dui. Integer ac augue quis felis vulputate mollis. Aenean enim est, dignissim vel pellentesque consectetur, dictum fringilla tellus. Aenean lobortis tempus fringilla. In dignissim, erat nec tempor lacinia, risus orci aliquet mauris, a sollicitudin massa enim eu dui. Vestibulum posuere erat sagittis tristique euismod. Donec quam elit, ultricies id posuere vitae, facilisis eu metus. Integer eu ante fermentum, vestibulum ipsum a, dictum sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque scelerisque posuere interdum. Nulla in sapien libero. In ut ipsum ac mauris efficitur tempus. Duis varius, metus a scelerisque convallis, nibh turpis elementum ligula, et posuere massa purus nec purus. Nullam dapibus rhoncus diam, at ultricies augue efficitur sit amet. Nunc neque quam, pulvinar ac elit quis, consectetur finibus ligula. In quis orci purus.
@@ -41,8 +41,8 @@ const bottomRightBox    = document.getElementById('bottom_right_box');
 
 const allImages= document.getElementsByTagName('img');
 
-const backDiv= document.getElementById('back_div');
-const backImg= document.getElementById('back_button');
+const backContainingDiv= document.getElementById('back_div');
+const backButton= document.getElementById('back_button');
 
 const introText= document.getElementById('intro');
 const secondaryText= document.getElementById('secondary_text');
@@ -85,7 +85,7 @@ function makeBoxFullscreen(boxToExpand, title, content, newBackgroundColour= nul
     contentText.style.paddingRight = '4%';
     contentText.style.textAlign = 'left';
 
-    Array.from(allImages).filter(item => item !== backImg).forEach(img => { img.style.height = '0'; });
+    Array.from(allImages).filter(item => item !== backButton).forEach(img => { img.style.height = '0'; });
 
     contentTitle.textContent = title;
     contentText.innerHTML = content;
@@ -98,21 +98,21 @@ function makeBoxFullscreen(boxToExpand, title, content, newBackgroundColour= nul
 
 function enterNewPage() {
     console.log('runs');
-    if (pageState === "home") {
+    if (pageState === "index") {
         console.log('invis');
-        backDiv.style.opacity = '0';
-        backDiv.classList.remove('clickable');
+        backContainingDiv.style.opacity = '0';
+        backContainingDiv.classList.remove('clickable');
     } else {
-        backDiv.style.opacity = '1';
+        backContainingDiv.style.opacity = '1';
         console.log('vis');
-        backDiv.classList.add('clickable');
+        backContainingDiv.classList.add('clickable');
     }
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
     topLeftBox.addEventListener('mouseenter', () => {
-        if (pageState === "home") {
+        if (pageState === "index") {
             introText.style.opacity = '0';
             setTimeout(() => {
                 introText.textContent = 'About me...';
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     topLeftBox.addEventListener('mouseleave', () => {
-        if (pageState === "home") {
+        if (pageState === "index") {
             introText.style.opacity = '0';
             setTimeout(() => {
                 introText.textContent = "Hi, I'm JV!";
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Home page to about me page
     topLeftBox.addEventListener('click', () => {
-        if (pageState === "home") {
+        if (pageState === "index") {
             pageState = "about-me";
             enterNewPage();
             topLeftBox.classList.remove('clickable');
@@ -153,9 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 introText.style.opacity = '0';
 
-                topMiddleBox.style.width = '0';
-                topRightBox.style.width = '0';
-
                 topLeftBox.style.width = '55%';
                 bottomRightBox.style.height = '100%';
                 bottomMiddleBox.style.width = 'calc(25% - var(--grid-gap))';
@@ -167,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     introText.innerHTML = "Jaiveer&nbsp;Chadda";
                     introText.style.translate = '0 -35%';
-                    topLeftBox.style.justifyContent = 'center';
                     introText.style.fontSize = '5vw';
+                    topLeftBox.style.justifyContent = 'center';
 
                     secondaryText.textContent = "Computer Science & Philosophy Student";
                     secondaryText.style.translate = '0 150%';
@@ -271,4 +268,71 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         }
     });
+
+
+    // Back button functionality
+
+    // About me page to home
+    backButton.addEventListener('click', () => {
+        if (pageState === "about-me") {
+            pageState = "index";
+            enterNewPage();
+            topLeftBox.classList.add('clickable');
+            bottomLeftBox.classList.remove('clickable');
+            bottomMiddleBox.classList.remove('clickable');
+            bottomRightBox.classList.remove('clickable');
+
+            [
+                introText,
+                secondaryText,
+                personalTitleText,
+                flagDiv,
+                educationTitleText,
+                schoolLogoDiv,
+                workTitleText,
+                workExpDiv
+            ].forEach(element => {
+                element.style.opacity = '0';
+            });
+
+            setTimeout(() => {
+                introText.style.opacity = '0';
+
+                topMiddleBox.style.width = 'calc(30% - var(--grid-gap))';
+                topRightBox.style.width = 'calc(25% - var(--grid-gap))';
+
+                topLeftBox.style.width = '45%';
+                topLeftBox.style.alignItems = 'center';
+                topLeftBox.style.justifyContent = 'center';
+                bottomRightBox.style.height = 'calc(50% - var(--grid-gap)/2)';
+                bottomMiddleBox.style.width = 'calc(30% - var(--grid-gap))';
+                bottomMiddleBox.style.left = 'calc(25% + var(--grid-gap))';
+                bottomLeftBox.style.width = '25%';
+
+                bottomLeftBox.style.background = '#BAFFC9';
+
+                setTimeout(() => {
+                    introText.innerHTML = "Hi, I'm JV!";
+                    introText.style.translate = '0 0';
+                    introText.style.fontSize = '6.5vw';
+
+                    secondaryText.textContent = "";
+
+                    [
+                        introText,
+                        topMiddleBox,
+                        topRightBox
+                    ].forEach(element => {
+                        element.style.opacity = '1';
+                    });
+                }, 500);
+            }, 350);
+
+
+
+        }
+    });
+
+
+
 });
