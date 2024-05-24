@@ -139,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pageState === "index") {
             pageState = "about-me";
             enterNewPage();
+
             topLeftBox.classList.remove('clickable');
             bottomLeftBox.classList.add('clickable');
             bottomMiddleBox.classList.add('clickable');
@@ -146,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             introText.style.opacity = '0';
             secondaryText.style.opacity = '0';
-
             topMiddleBox.style.opacity = '0';
             topRightBox.style.opacity = '0';
 
@@ -157,14 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 bottomRightBox.style.height = '100%';
                 bottomMiddleBox.style.width = 'calc(25% - var(--grid-gap))';
                 bottomMiddleBox.style.left = 'calc(30% + var(--grid-gap))';
-                bottomLeftBox.style.width = '30%';
 
+                bottomLeftBox.style.width = '30%';
                 bottomLeftBox.style.background = 'white';
 
                 setTimeout(() => {
                     introText.innerHTML = "Jaiveer&nbsp;Chadda";
                     introText.style.translate = '0 -35%';
                     introText.style.fontSize = '5vw';
+
                     topLeftBox.style.justifyContent = 'center';
 
                     secondaryText.textContent = "Computer Science & Philosophy Student";
@@ -304,11 +305,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 topLeftBox.style.width = '45%';
                 topLeftBox.style.alignItems = 'center';
                 topLeftBox.style.justifyContent = 'center';
+
                 bottomRightBox.style.height = 'calc(50% - var(--grid-gap)/2)';
+
                 bottomMiddleBox.style.width = 'calc(30% - var(--grid-gap))';
                 bottomMiddleBox.style.left = 'calc(25% + var(--grid-gap))';
-                bottomLeftBox.style.width = '25%';
 
+                bottomLeftBox.style.width = '25%';
                 bottomLeftBox.style.background = '#BAFFC9';
 
                 setTimeout(() => {
@@ -327,9 +330,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }, 500);
             }, 350);
-
-
-
         }
     });
 
